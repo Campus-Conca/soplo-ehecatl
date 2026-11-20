@@ -1,5 +1,5 @@
-const CACHE = "soplo-0.9.3";
-const ARCHIVOS = ["./", "./index.html", "./manifest.webmanifest", "./icono-192.png", "./icono-512.png", "./icono-mask-512.png", "./icono-apple.png", "./favicon.png", "./video/sopla.mp4", "./video/sopla.jpg", "./video/regresa.mp4", "./video/regresa.jpg"];
+const CACHE = "soplo-0.9.6";
+const ARCHIVOS = ["./", "./index.html", "./manifest.webmanifest", "./icono-192.png", "./icono-512.png", "./icono-mask-512.png", "./icono-apple.png", "./favicon.png", "./video/sopla.mp4", "./video/sopla.jpg", "./video/regresa.mp4", "./video/regresa.jpg", "./foto/"];
 self.addEventListener("install", e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(ARCHIVOS)).then(() => self.skipWaiting())); });
 self.addEventListener("activate", e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
 async function rango(req) {
